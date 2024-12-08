@@ -27,7 +27,7 @@ export const ClimaApp = () => {
  
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (ciudad.length > 0) fetchClima(ciudad);
+    if (ciudad.length > 0) fetchClima(ciudad, units);
   };
 
   const handleUnits = (newUnits) => {
@@ -37,7 +37,7 @@ export const ClimaApp = () => {
   // Ejecutar fetchClima cuando cambian las unidades, si ya hay una ciudad seleccionada
   useEffect(() => {
     if (ciudad) {
-      fetchClima(ciudad);
+      fetchClima(ciudad, units);
     }
   }, [units]); // Este efecto depende de "units"
   return (
